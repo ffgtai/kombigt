@@ -4,130 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kombi GT - Indicações e Afiliados</title>
-    <!-- Fonte Moderna e Ícones -->
+    <!-- Fonte e Ícones Estilizados -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Variáveis de Cores (Identidade Automotiva / Industrial) */
         :root {
-            --cor-principal: #e67e22; /* Laranja Kombi */
-            --cor-principal-hover: #d35400;
-            --cor-fundo: #f8fafc;
+            --cor-principal: #e67e22; /* Laranja Custom/Automotivo */
+            --cor-fundo: #f1f5f9;
             --cor-card: #ffffff;
-            --texto-escuro: #0f172a;
+            --texto-escuro: #1e293b;
             --texto-claro: #64748b;
             --amarelo-ml: #fff159;
-            --amarelo-ml-hover: #ebd915;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
             background-color: var(--cor-fundo);
             color: var(--texto-escuro);
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
         }
 
-        /* Cabeçalho Premium */
+        /* Cabeçalho com Imagem de Fundo Temática */
         header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            /* Imagem de fundo: Oficina/Garagem Retrô para criar atmosfera */
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                        url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 5px solid var(--cor-principal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: radial-gradient(var(--cor-principal) 0.5px, transparent 0.5px);
-            background-size: 10px 10px;
-            opacity: 0.1;
+            padding: 80px 20px;
+            border-bottom: 6px solid var(--cor-principal);
         }
 
         .header-content {
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
+        }
+
+        /* Espaço para o Logotipo / Arte do Canal */
+        .logo-container {
+            margin-bottom: 15px;
+        }
+        
+        .logo-img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid var(--cor-principal);
+            background-color: #1e293b;
+            padding: 5px;
         }
 
         header h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
             margin-bottom: 5px;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
         }
 
         header .subtitulo {
+            font-family: 'Montserrat', sans-serif;
             color: var(--cor-principal);
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
         }
 
         header p {
             color: #cbd5e1;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.15rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* Container Principal */
+        /* Grid e Seções */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 20px;
         }
 
-        /* Títulos das Seções */
         .secao-titulo {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 30px;
-            color: var(--texto-escuro);
+            margin-bottom: 35px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .secao-titulo::before {
             content: '';
-            display: inline-block;
             width: 6px;
-            height: 28px;
+            height: 30px;
             background-color: var(--cor-principal);
             border-radius: 4px;
         }
 
-        /* Grid de Produtos */
         .produtos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 35px;
             margin-bottom: 60px;
         }
 
-        /* Card do Produto Modernizado */
+        /* Estilização dos Cards */
         .produto-card {
             background-color: var(--cor-card);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             border: 1px solid #e2e8f0;
@@ -135,31 +139,26 @@
 
         .produto-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: #cbd5e1;
+            box-shadow: 0 16px 24px rgba(0,0,0,0.12);
         }
 
-        /* Moldura da Imagem */
         .produto-imagem-wrapper {
             width: 100%;
             height: 220px;
             overflow: hidden;
-            position: relative;
-            background-color: #f1f5f9;
         }
 
         .produto-imagem-real {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
         .produto-card:hover .produto-imagem-real {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
-        /* Informações do Card */
         .produto-info {
             padding: 24px;
             display: flex;
@@ -181,10 +180,10 @@
         }
 
         .produto-nome {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 10px;
-            color: var(--texto-escuro);
             line-height: 1.4;
         }
 
@@ -195,86 +194,66 @@
             flex-grow: 1;
         }
 
-        /* Botão Mercado Livre Estilizado */
+        /* Botão */
         .btn-comprar {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             background-color: var(--amarelo-ml);
-            color: #2d3748;
+            color: #1e293b;
             text-decoration: none;
             padding: 14px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: background 0.2s;
         }
 
         .btn-comprar:hover {
-            background-color: var(--amarelo-ml-hover);
-            color: #000000;
-            transform: scale(1.02);
+            background-color: #ebd915;
         }
 
-        .btn-comprar i {
-            font-size: 1.1rem;
-        }
-
-        /* Rodapé Industrial */
         footer {
             background-color: #0f172a;
             color: #94a3b8;
             text-align: center;
             padding: 40px 20px;
-            margin-top: 80px;
-            font-size: 0.9rem;
             border-top: 4px solid var(--cor-principal);
         }
 
         footer .dev-info {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #64748b;
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        footer p {
-            max-width: 600px;
-            margin: 5px auto;
-        }
-
-        footer a {
-            color: var(--cor-principal);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho do Site -->
     <header>
         <div class="header-content">
+            <!-- 
+              DICA DE IDENTIDADE: Se um dos seus arquivos (ex: 12802937613797316773.png) for a logo do canal,
+              substitua a URL abaixo pelo nome do arquivo correspondente no seu repositório.
+            -->
+            <div class="logo-container">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=300" alt="Logo Kombi GT" class="logo-img">
+            </div>
+            
             <h1>KOMBI GT</h1>
-            <div class="subtitulo">SANTOS - SP</div>
+            <div class="subtitulo">Santos - SP</div>
             <p>As ferramentas, peças e acessórios recomendados que usamos em nossas manutenções e restaurações.</p>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- SEÇÃO 1: Visto nos Vídeos -->
         <h2 class="secao-titulo">Visto nos Vídeos Recentes</h2>
         <div class="produtos-grid">
             
-            <!-- Produto 1 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600" alt="Jogo de Chaves" class="produto-imagem-real">
@@ -289,7 +268,6 @@
                 </div>
             </div>
 
-            <!-- Produto 2 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=600" alt="Volante Vintage" class="produto-imagem-real">
@@ -304,7 +282,6 @@
                 </div>
             </div>
 
-            <!-- Produto 3 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600" alt="Auto Elétrica" class="produto-imagem-real">
@@ -321,11 +298,9 @@
 
         </div>
 
-        <!-- SEÇÃO 2: Estética e Oficina -->
         <h2 class="secao-titulo">Estética e Oficina</h2>
         <div class="produtos-grid">
             
-            <!-- Produto 4 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&q=80&w=600" alt="Tratamento Ferrugem" class="produto-imagem-real">
@@ -340,7 +315,6 @@
                 </div>
             </div>
 
-            <!-- Produto 5 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&q=80&w=600" alt="Farol" class="produto-imagem-real">
@@ -355,7 +329,6 @@
                 </div>
             </div>
 
-            <!-- Produto 6 -->
             <div class="produto-card">
                 <div class="produto-imagem-wrapper">
                     <img src="https://images.unsplash.com/photo-1513828583835-c359b7dfdfd4?auto=format&fit=crop&q=80&w=600" alt="Pintura" class="produto-imagem-real">
@@ -374,7 +347,6 @@
 
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <div class="dev-info">Automóveis antigos desde 2021</div>
         <p>&copy; 2026 Kombi GT. Todos os direitos reservados.</p>
