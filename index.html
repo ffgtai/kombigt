@@ -101,8 +101,8 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
+            flex-wrap: wrap;
             gap: 4px;
-            overflow-x: auto;
         }
 
         .nav-inner a {
@@ -111,14 +111,27 @@
             font-size: 0.82rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 14px 16px;
+            letter-spacing: 1px;
+            padding: 22px 18px;
             white-space: nowrap;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -3px;
-            transition: color 0.2s, border-color 0.2s;
+            position: relative;
+            transition: color 0.25s;
         }
-        .nav-inner a:hover { color: #fff; border-color: var(--cor-principal); }
+        .nav-inner a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 18px;
+            right: 18px;
+            height: 3px;
+            background: var(--cor-principal);
+            border-radius: 3px 3px 0 0;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.25s ease;
+        }
+        .nav-inner a:hover { color: #fff; }
+        .nav-inner a:hover::after { transform: scaleX(1); }
 
         /* ── CONTAINER ── */
         .container {
@@ -322,7 +335,7 @@
 
     <div class="banner-afiliado">
         <i class="fa-solid fa-circle-info"></i>
-        <span>Ao comprar pelos links abaixo, você apoia o canal <strong>Kombi GT</strong> sem pagar nada a mais. Os produtos são indicados por experiência própria na oficina. Obrigado pelo apoio! 🙏</span>
+        <span>Ao comprar pelos links abaixo, você apoia o canal <strong>Kombi GT</strong> sem pagar nada a mais. Os produtos são selecionados para a sua melhor experiência. Obrigado pelo apoio! 🙏</span>
     </div>
 
     <!-- SEÇÃO 1 -->
